@@ -1,0 +1,13 @@
+def print_calendar(month,year):
+    for i in range(7):
+        print( day_name(i).upper()[0:3], end="\t")
+    print()
+    
+    position = date_to_week_day(1,month,year)
+    print("\t"*position, end="")
+
+    for day in range(1, days_in_month(month,year)+1):
+        print(day,end="\t")
+        position+=1
+        if position%7==0:
+            print()
